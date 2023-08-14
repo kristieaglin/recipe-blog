@@ -1,0 +1,57 @@
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    border-bottom: 1px black solid;
+}
+
+.header-container h1{
+    font-size: 40px;
+}
+
+.header-container p{
+    font-size: 17px;
+}
+
+.menu-closed{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu-open{
+    display: flex;
+    gap: 100px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    background-color: white;
+    padding: 40px 30px;
+    border-left: 1px black solid;
+}
+
+.signup-btn{
+    border: none;
+    background-color: sienna;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.menu-icon{
+    font-size: 2em;
+}
+
+.menu-options{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.recipe-category{
+    font-weight: 300;
+}
