@@ -1,0 +1,26 @@
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    border-top: 1px black solid;
+}
+
+.contact-us{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-us p{
+    font-size: 17px;
+}
+
+.socials-container{
+    display: flex;
+    gap: 20px;
+}
+
+.footer-icon{
+    font-size: 2.5em;
+}

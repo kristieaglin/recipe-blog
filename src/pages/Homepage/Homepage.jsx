@@ -3,7 +3,7 @@ import './Homepage.css'
 
 function Homepage() {
   return (
-    <div>
+    <div className='homepage-container'>
         <p>hello recipes!</p>
     </div>
   )
