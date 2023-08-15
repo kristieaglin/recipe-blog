@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Header.css'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { FiMenu } from "react-icons/fi";
 import { BsArrowBarRight } from "react-icons/bs";
 //BsArrowBarRight
@@ -30,12 +30,13 @@ function Header() {
                 :
                 <div className='menu-open'>
                     <div className='menu-options'>
+                        <Link to={'/'} className='recipe-category'>All</Link>
                         {
-                            recipeCategoies.map((item,index)=><p key={index} className='recipe-category'>{item}</p>)
+                            recipeCategoies.map((item,index)=><Link key={index} className='recipe-category' to={`/recipes/${item}`}>{item}</Link>)
                         }
                         <button className='signup-btn'>Sign up</button>
                     </div>
-                    <BsArrowBarRight className='menu-icon' onClick={()=>setMenuOpen(true)}/>
+                    <BsArrowBarRight className='menu-icon arrow-icon' onClick={()=>setMenuOpen(true)}/>
                 </div>
             }
         </div>

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 20px;
+    padding: 20px 50px;
     border-bottom: 1px black solid;
 }
 
@@ -27,14 +27,13 @@
     position: absolute;
     right: 0px;
     top: 0px;
-    height: 100vh;
-    background-color: white;
+    background-color: sienna;
     padding: 40px 30px;
-    border-left: 1px black solid;
+    z-index: 2;
 }
 
 .signup-btn{
-    border: none;
+    border: 1px solid white;
     background-color: sienna;
     color: white;
     padding: 10px 30px;
@@ -44,8 +43,17 @@
     cursor: pointer;
 }
 
+.signup-btn:hover{
+    font-weight: 400;
+}
+
 .menu-icon{
     font-size: 2em;
+    cursor: pointer;
+}
+
+.arrow-icon{
+    color: white;
 }
 
 .menu-options{
@@ -56,4 +64,11 @@
 
 .recipe-category{
     font-weight: 300;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+}
+
+.recipe-category:hover{
+    font-weight: 400;
 }
