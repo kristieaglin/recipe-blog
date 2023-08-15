@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import './Header.css'
+import { useNavigate } from 'react-router-dom';
 import { FiMenu } from "react-icons/fi";
 import { BsArrowBarRight } from "react-icons/bs";
 //BsArrowBarRight
 
 function Header() {
+
+    const navigate = useNavigate()
 
     const [menuOpen, setMenuOpen] = useState(true)
 
@@ -14,7 +17,7 @@ function Header() {
   return (
     <div className='header-container'>
         <div>
-            <h1>C'est délicieux.</h1>
+            <h1 onClick={()=>navigate('/')}>C'est délicieux.</h1>
             <p>amazing recipes from South Louisiana</p>
         </div>
         <div>
