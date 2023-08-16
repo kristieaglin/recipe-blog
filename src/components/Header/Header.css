@@ -21,6 +21,12 @@
     gap: 20px;
 }
 
+.logged-in-menu-closed{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 .menu-open{
     display: flex;
     gap: 100px;
@@ -62,6 +68,13 @@
     gap: 20px;
 }
 
+.category-title{
+    color: white;
+    padding-top: 20px;
+    border-top: 1px white solid;
+    font-weight: 500;
+}
+
 .recipe-category{
     font-weight: 300;
     cursor: pointer;
@@ -71,4 +84,11 @@
 
 .recipe-category:hover{
     font-weight: 400;
+    text-decoration: underline;
+}
+
+.recipe-category-p{
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
 }

@@ -5,6 +5,7 @@ import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import RecipeCategories from './pages/RecipeCategories/RecipeCategories';
 import Auth from './pages/Auth/Auth'
+import AddRecipe from './pages/AddRecipe/AddRecipe';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Homepage />} />
         <Route path='/auth' element={<Auth />} />
+        <Route path='/addRecipe' element={<AddRecipe />} />
         <Route path='recipes/:recipeCategory' element={<RecipeCategories />} />
       </Routes>
       <Footer />

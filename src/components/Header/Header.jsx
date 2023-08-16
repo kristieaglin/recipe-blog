@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
 import './Header.css'
 import { useNavigate, Link } from 'react-router-dom';
+import { auth } from '../../config/firebaseConfig';
+import { useAuthState} from 'react-firebase-hooks/auth'
 import { FiMenu } from "react-icons/fi";
 import { BsArrowBarRight } from "react-icons/bs";
-//BsArrowBarRight
+import { signOut } from 'firebase/auth';
 
 function Header() {
+
+    //get user data
+    const [user] = useAuthState(auth)
 
     const navigate = useNavigate()
 
@@ -24,18 +29,43 @@ function Header() {
             {
                 menuOpen ?
                 <div className='menu-closed'>
-                    <button className='signup-btn'>Sign up</button>
+                    {
+                        user ?
+                        <div className='logged-in-menu-closed'>
+                            <p>Hello, {user.displayName ? user.displayName : user.email}!</p>
+                            <button className='signup-btn' onClick={()=>signOut(auth)}>Log out</button>
+                        </div>
+                        :
+                        <button className='signup-btn' onClick={()=>navigate('/auth')}>Sign up</button>
+                    }
                     <FiMenu className='menu-icon' onClick={()=>setMenuOpen(false)} />
                 </div>
                 :
                 <div className='menu-open'>
-                    <div className='menu-options'>
-                        <Link to={'/'} className='recipe-category'>All</Link>
-                        {
-                            recipeCategoies.map((item,index)=><Link key={index} className='recipe-category' to={`/recipes/${item}`}>{item}</Link>)
-                        }
-                        <button className='signup-btn'>Sign up</button>
-                    </div>
+                    {
+                        user ?
+                        <div>
+                            <div className='menu-options'>
+                            <p className='recipe-category-p'>Hello, {user.displayName ? user.displayName : user.email}!</p>
+                            <Link to={'/'} className='recipe-category'>Home</Link>
+                            <Link to={'/addRecipe'} className='recipe-category'>Add a new Entry</Link>
+                            <Link to={'/'} className='recipe-category'>Favorites</Link>
+                            <h3 className='category-title'>Recipes by category</h3>
+                            {
+                                recipeCategoies.map((item,index)=><Link key={index} className='recipe-category' to={`/recipes/${item}`}>{item}</Link>)
+                            }
+                            <button className='signup-btn' onClick={()=>signOut(auth)}>Log out</button>
+                            </div>
+                        </div>
+                        :
+                        <div className='menu-options'>
+                            <Link to={'/'} className='recipe-category'>Home</Link>
+                            {
+                                recipeCategoies.map((item,index)=><Link key={index} className='recipe-category' to={`/recipes/${item}`}>{item}</Link>)
+                            }
+                        <button className='signup-btn' onClick={()=>navigate('/auth')}>Sign up</button>
+                        </div>
+                    }
                     <BsArrowBarRight className='menu-icon arrow-icon' onClick={()=>setMenuOpen(true)}/>
                 </div>
             }

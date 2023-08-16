@@ -3,6 +3,7 @@ import './RecipeCategories.css'
 import { useParams } from 'react-router-dom'
 import { collection, orderBy, query, where, getDocs } from 'firebase/firestore';
 import { db } from '../../config/firebaseConfig';
+import RecipeCard from '../../components/RecipeCard/RecipeCard';
 
 function RecipeCategories() {
 
@@ -35,7 +36,7 @@ function RecipeCategories() {
 
   return (
     <div className='recipe-categories-container'>
-      {recipe.map((item,index)=><p key={index}>{item?.title}</p>)}
+      {recipe.map((item)=><RecipeCard key={item?.id} recipe={item} />)}
     </div>
   )
 }

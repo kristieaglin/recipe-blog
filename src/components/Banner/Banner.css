@@ -54,7 +54,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /* padding: 0 50px; */
 }
 
 .other-recipe{
@@ -76,8 +75,12 @@
     height: 400px;
     width: 350px;
     object-fit: cover;
+    /* border-bottom-right-radius: 50px; */
 }
 
 .other-recipe-info{
     text-align: right;
+    padding-top: 10px;
+    padding-right: 50px;
+    
 }

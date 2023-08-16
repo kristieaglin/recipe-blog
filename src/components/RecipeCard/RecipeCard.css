@@ -1,0 +1,8 @@
+.recipe-card{
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
+    width: 33%;
+    border-right: 1px black solid;
+    border-bottom: 1px black solid;
+}
