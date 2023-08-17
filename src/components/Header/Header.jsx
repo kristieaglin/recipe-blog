@@ -60,6 +60,7 @@ function Header() {
                         :
                         <div className='menu-options'>
                             <Link to={'/'} className='recipe-category'>Home</Link>
+                            <h3 className='category-title'>Recipes by category</h3>
                             {
                                 recipeCategoies.map((item,index)=><Link key={index} className='recipe-category' to={`/recipes/${item}`}>{item}</Link>)
                             }

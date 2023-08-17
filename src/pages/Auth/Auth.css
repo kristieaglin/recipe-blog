@@ -37,7 +37,7 @@
 }
 
 .auth-button{
-    border: 1px solid white;
+    border: none;
     background-color: sienna;
     color: white;
     padding: 10px 30px;

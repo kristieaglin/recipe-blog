@@ -48,9 +48,35 @@
     border-bottom: 1px solid black;
 }
 
+.input-group input::placeholder{
+    color: rgba(160, 81, 45, 0.443);
+}
+
 .input-group select{
     padding: 10px 20px;
     font-size: 19px;
     border: none;
     border-bottom: 1px solid black;
+}
+
+#image::file-selector-button{
+    border: 1px sienna solid;
+    background-color: white;
+    color: sienna;
+    padding: 5px 30px;
+    border-radius: 20px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.submit-btn{
+    border: none;
+    background-color: sienna;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-size: 17px;
+    font-weight: 300;
+    cursor: pointer;
+    margin: 50px 0 30px;
 }
