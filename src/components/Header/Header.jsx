@@ -46,9 +46,9 @@ function Header() {
                         user ?
                         <div>
                             <div className='menu-options'>
-                            <p className='recipe-category-p'>Hello, {user.displayName ? user.displayName : user.email}!</p>
+                            <p className='recipe-category-p'>Hello, {user?.displayName ? user?.displayName : user?.email}!</p>
                             <Link to={'/'} className='recipe-category'>Home</Link>
-                            <Link to={'/addRecipe'} className='recipe-category'>Add a new Entry</Link>
+                            <Link to={'/add'} className='recipe-category'>Add a new Entry</Link>
                             <Link to={'/'} className='recipe-category'>Favorites</Link>
                             <h3 className='category-title'>Recipes by category</h3>
                             {

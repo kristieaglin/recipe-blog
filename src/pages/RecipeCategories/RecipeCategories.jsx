@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './RecipeCategories.css'
 import { useParams } from 'react-router-dom'
-import { collection, orderBy, query, where, getDocs } from 'firebase/firestore';
+import { collection, query, where, getDocs } from 'firebase/firestore';
 import { db } from '../../config/firebaseConfig';
 import RecipeCard from '../../components/RecipeCard/RecipeCard';
 

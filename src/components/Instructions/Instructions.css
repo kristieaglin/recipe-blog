@@ -1,0 +1,17 @@
+.instructions{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 40px 20px;
+}
+
+.instructions h3{
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.instructions p{
+    font-size: 20px;
+    font-weight: 300;
+    width: 75%;
+}

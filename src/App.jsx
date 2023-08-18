@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer'
 import RecipeCategories from './pages/RecipeCategories/RecipeCategories';
 import Auth from './pages/Auth/Auth'
 import AddRecipe from './pages/AddRecipe/AddRecipe';
+import RecipeDetails from './pages/RecipeDetails/RecipeDetails';
 
 function App() {
 
@@ -15,8 +16,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Homepage />} />
         <Route path='/auth' element={<Auth />} />
-        <Route path='/addRecipe' element={<AddRecipe />} />
-        <Route path='recipes/:recipeCategory' element={<RecipeCategories />} />
+        <Route path='/add' element={<AddRecipe />} />
+        <Route path='/recipes/:recipeCategory' element={<RecipeCategories />} />
+        <Route path='/details/:recipeId' element={<RecipeDetails />} />
       </Routes>
       <Footer />
     </BrowserRouter>

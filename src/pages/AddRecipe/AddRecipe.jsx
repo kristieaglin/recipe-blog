@@ -43,8 +43,8 @@ function AddRecipe() {
                 addDoc(recipeRef, {
                     title:formData.title, 
                     summary:formData.summary,
-                    ingredients:formData.ingredients,
-                    instructions:formData.instructions,
+                    ingredients:formData.ingredients.split('.'),
+                    instructions:formData.instructions.split('.'),
                     category:formData.category,
                     imageURL:url,
                     createdBy:user.displayName,

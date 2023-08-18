@@ -4,8 +4,11 @@ import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore'
 import { db } from '../../config/firebaseConfig'
 import { BsFillSuitHeartFill } from "react-icons/bs"
 import { FaRegComment } from "react-icons/fa"
+import { useNavigate } from 'react-router-dom'
 
 function Banner() {
+
+    const navigate = useNavigate()
 
     const [mainRecipe, setMainRecipe] = useState({})
     const [otherRecipes, setOtherRecipes] = useState([])
@@ -38,7 +41,7 @@ function Banner() {
 
   return (
     <div className='banner-container'>
-        <div className='main-recipe-container'>
+        <div className='main-recipe-container' onClick={()=>navigate(`details/${mainRecipe?.id}`)}>
             <img src={mainRecipe?.imageURL} className='main-recipe-img' />
             <div className='main-recipe-info'>
                 <h2>{mainRecipe?.title}</h2>
@@ -52,7 +55,7 @@ function Banner() {
         </div>
         <div className='other-recipes-container'>
             {
-                otherRecipes.map(item=><div key={item.id} className='other-recipe'>
+                otherRecipes.map(item=><div key={item.id} className='other-recipe' onClick={()=>navigate(`details/${item?.id}`)}>
                     <img src={item?.imageURL} className='other-recipes-img' />
                     <div className='other-recipe-info'>
                         <h2>{item?.title}</h2>
