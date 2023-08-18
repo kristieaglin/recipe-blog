@@ -42,7 +42,7 @@
 
 .created-info{
     display: flex;
-    justify-content: space-between;
+    gap: 75px;
 }
 
 .details-img{

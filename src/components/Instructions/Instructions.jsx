@@ -9,7 +9,7 @@ function Instructions({instructions}) {
             instructions.map((item, index)=><div key={index} className='instructions'>
                     <h3>Step {index+1}</h3>
                     <p>{item}</p>
-                </div>).slice(0,-1)
+                </div>)
         }
     </div>
   )

@@ -11,7 +11,7 @@ function Ingredients({ingredients}) {
             ingredients.map((item, index)=><div key={index} className='ingredients'>
                     <BsArrowRightShort className='ingredient-icon' />
                     <p>{item}</p>
-                </div>).slice(0,-1)
+                </div>)
         }
     </div>
   )

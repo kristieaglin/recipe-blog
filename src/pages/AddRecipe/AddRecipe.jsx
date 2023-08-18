@@ -6,6 +6,9 @@ import { collection, addDoc, Timestamp } from 'firebase/firestore'
 import { v4 } from 'uuid'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom'
+import { IoIosAlert } from "react-icons/io";
+import { FaHandPointRight } from "react-icons/fa";
+//FaHandPointRight
 
 function AddRecipe() {
 
@@ -14,6 +17,9 @@ function AddRecipe() {
     const navigate = useNavigate()
 
     const recipeCategoies = ['Breakfast', 'Lunch', 'Dinner', 'Dessert', 'Beverages']
+
+    const [ingredientAlert, setIngredientAlert] = useState(false)
+    const [instructionAlert, setInstructionAlert] = useState(false)
 
     const [formData, setFormData] = useState({
         title:'',
@@ -43,8 +49,8 @@ function AddRecipe() {
                 addDoc(recipeRef, {
                     title:formData.title, 
                     summary:formData.summary,
-                    ingredients:formData.ingredients.split('.'),
-                    instructions:formData.instructions.split('.'),
+                    ingredients:formData.ingredients.split('#'),
+                    instructions:formData.instructions.split('#'),
                     category:formData.category,
                     imageURL:url,
                     createdBy:user.displayName,
@@ -92,7 +98,17 @@ function AddRecipe() {
                     />
                 </div>
                 <div className='input-group'>
-                    <label htmlFor='ingredients'>Ingredients</label>
+                    <label htmlFor='ingredients'>Ingredients <IoIosAlert className='alert-icon' onMouseOver={()=>setIngredientAlert(true)} onMouseOut={()=>setIngredientAlert(false)} /></label>
+                    {
+                        ingredientAlert && 
+                        <div className='alert-text'>
+                            <FaHandPointRight className='notice-icon' />
+                            <div>
+                                <p>Be sure to separate each item with a # symbol.</p>
+                                <p><span>Example:</span> Item 1 # Item 2 # Item 3</p>
+                            </div>
+                        </div>
+                    }
                     <input
                         type='text'
                         id='ingredients'
@@ -102,7 +118,17 @@ function AddRecipe() {
                     />
                 </div>
                 <div className='input-group'>
-                    <label htmlFor='instructions'>Instructions</label>
+                    <label htmlFor='instructions'>Instructions <IoIosAlert className='alert-icon' onMouseOver={()=>setInstructionAlert(true)} onMouseOut={()=>setInstructionAlert(false)} /></label>
+                    {
+                        instructionAlert && 
+                        <div className='alert-text'>
+                            <FaHandPointRight className='notice-icon' />
+                            <div>
+                                <p>Be sure to separate each step with a # symbol.</p>
+                                <p><span>Example:</span> Step 1 # Step 2 # Step 3</p>
+                            </div>
+                        </div>
+                    }
                     <input
                         type='text'
                         id='instructions'
