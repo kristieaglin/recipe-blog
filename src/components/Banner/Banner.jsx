@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Banner.css'
 import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore'
 import { db } from '../../config/firebaseConfig'
-import { BsFillSuitHeartFill } from "react-icons/bs"
-import { FaRegComment } from "react-icons/fa"
+import { BsSuitHeartFill, BsSuitHeart } from "react-icons/bs"
 import { useNavigate } from 'react-router-dom'
 
 function Banner() {
@@ -12,6 +11,8 @@ function Banner() {
 
     const [mainRecipe, setMainRecipe] = useState({})
     const [otherRecipes, setOtherRecipes] = useState([])
+
+    const [isLiked, setIsLiked] = useState(true)
 
     useEffect(()=>{
         //reference to recipes collection
@@ -41,27 +42,35 @@ function Banner() {
 
   return (
     <div className='banner-container'>
-        <div className='main-recipe-container' onClick={()=>navigate(`details/${mainRecipe?.id}`)}>
-            <img src={mainRecipe?.imageURL} className='main-recipe-img' />
-            <div className='main-recipe-info'>
+        <div className='main-recipe-container'>
+            <img src={mainRecipe?.imageURL} className='main-recipe-img' onClick={()=>navigate(`details/${mainRecipe?.id}`)} />
+            <div className='main-recipe-info' onClick={()=>navigate(`details/${mainRecipe?.id}`)}>
                 <h2>{mainRecipe?.title}</h2>
                 <p className='main-date'>{mainRecipe?.createdAt?.toDate().toDateString()}</p>
                 <p>{mainRecipe?.summary}</p>
             </div>
             <div className='main-icon-container'>
-                <BsFillSuitHeartFill className='main-icon' />
-                <FaRegComment className='main-icon' />
+                {
+                    isLiked ?
+                    <BsSuitHeartFill className='main-icon' onClick={()=>setIsLiked(false)} />
+                    :
+                    <BsSuitHeart className='main-icon' onClick={()=>setIsLiked(true)} />
+                }
             </div>
         </div>
         <div className='other-recipes-container'>
             {
-                otherRecipes.map(item=><div key={item.id} className='other-recipe' onClick={()=>navigate(`details/${item?.id}`)}>
-                    <img src={item?.imageURL} className='other-recipes-img' />
+                otherRecipes.map(item=><div key={item.id} className='other-recipe'>
+                    <img src={item?.imageURL} className='other-recipes-img' onClick={()=>navigate(`details/${item?.id}`)} />
                     <div className='other-recipe-info'>
-                        <h2>{item?.title}</h2>
-                        <p>{item?.createdAt?.toDate().toDateString()}</p>
-                        <BsFillSuitHeartFill className='main-icon' />
-                        <FaRegComment className='main-icon' />
+                        <h2 onClick={()=>navigate(`details/${item?.id}`)}>{item?.title}</h2>
+                        <p onClick={()=>navigate(`details/${item?.id}`)}>{item?.createdAt?.toDate().toDateString()}</p>
+                        {
+                            isLiked ?
+                            <BsSuitHeartFill className='main-icon' onClick={()=>setIsLiked(false)} />
+                            :
+                            <BsSuitHeart className='main-icon' onClick={()=>setIsLiked(true)} />
+                        }
                     </div>
                 </div>)
             }

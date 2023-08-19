@@ -8,7 +8,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom'
 import { IoIosAlert } from "react-icons/io";
 import { FaHandPointRight } from "react-icons/fa";
-//FaHandPointRight
+import Swal from 'sweetalert2'
 
 function AddRecipe() {
 
@@ -61,7 +61,27 @@ function AddRecipe() {
             .catch(err=>console.log(err))
         })
         .then(res=>{
-            alert('Your recipe was added successfully!')
+            let timerInterval
+            Swal.fire({
+            title: 'Your recipe was uploaded successfully!',
+            html: 'I will close in <b></b> milliseconds.',
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: () => {
+                Swal.showLoading()
+                const b = Swal.getHtmlContainer().querySelector('b')
+                timerInterval = setInterval(() => {
+                b.textContent = Swal.getTimerLeft()
+                }, 100)
+            },
+            willClose: () => {
+                clearInterval(timerInterval)
+            }
+            }).then((result) => {
+            if (result.dismiss === Swal.DismissReason.timer) {
+                console.log('I was closed by the timer')
+            }
+            })
             setTimeout(()=>{
                 navigate('/')
             },1000)

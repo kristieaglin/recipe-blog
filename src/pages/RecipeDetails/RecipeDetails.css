@@ -40,9 +40,14 @@
     font-size: 16px;
 }
 
+.like-icon{
+    font-size: 1.5em;
+}
+
 .created-info{
     display: flex;
-    gap: 75px;
+    align-items: center;
+    gap: 30px;
 }
 
 .details-img{
@@ -52,15 +57,20 @@
     padding-right: 50px;
 }
 
-.ingredients-container{
+.ingredients-container, .instructions-container{
     border-bottom: 1px black solid;
-    padding: 50px 50px 30px;
-}
-
-.instructions-container{
     padding: 50px 50px 30px;
 }
 
 .ingredients-container h2, .instructions-container h2{
     font-size: 30px;
+}
+
+.comments-container h2{
+    font-size: 30px;
+    color: sienna;
+}
+
+.comments-container{
+    padding: 50px 50px 30px;
 }

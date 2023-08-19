@@ -10,7 +10,6 @@
     gap: 50px;
     padding: 0 50px;
     border-bottom: 1px black solid;
-    cursor: pointer;
 }
 
 .main-recipe-container:hover{
@@ -21,11 +20,13 @@
     height: 500px;
     width: 500px;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .main-recipe-info{
     padding: 50px 0;
     width: 600px;
+    cursor: pointer;
 }
 
 .main-recipe-container h2{
@@ -44,22 +45,20 @@
 
 .main-icon-container{
     position: absolute;
-    display: flex;
     right: 50px;
-    top: 150px;  
+    top: 140px;  
     z-index: 1;
 }
 
 .main-icon{
-    font-size: 2.25em;
-    padding-left: 10px;
+    font-size: 2em;
+    padding-top: 5px;
 }
 
 .other-recipes-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    cursor: pointer;
 }
 
 .other-recipe{
@@ -85,12 +84,15 @@
     height: 400px;
     width: 350px;
     object-fit: cover;
-    /* border-bottom-right-radius: 50px; */
+    cursor: pointer;
 }
 
 .other-recipe-info{
     text-align: right;
     padding-top: 10px;
     padding-right: 50px;
-    
+}
+
+.other-recipe-info h2, .other-recipe-info p{
+    cursor: pointer;
 }

@@ -5,12 +5,16 @@ import { doc, getDoc } from 'firebase/firestore'
 import { db } from '../../config/firebaseConfig'
 import Ingredients from '../../components/Ingredients/Ingredients'
 import Instructions from '../../components/Instructions/Instructions'
+import Comments from '../../components/Comments/Comments';
+import { BsSuitHeartFill, BsSuitHeart } from "react-icons/bs"
 
 function RecipeDetails() {
 
     const {recipeId} = useParams()
 
     const [recipe, setRecipe] = useState({})
+
+    const [isLiked, setIsLiked] = useState(true)
 
     useEffect(()=>{
         const docRef = doc(db, 'recipes', recipeId)
@@ -35,6 +39,12 @@ function RecipeDetails() {
                 </div>
                 <p>{recipe?.summary}</p>
                 <div className='created-info'>
+                    {
+                        isLiked ?
+                        <BsSuitHeartFill className='like-icon' onClick={()=>setIsLiked(false)} />
+                        :
+                        <BsSuitHeart className='like-icon' onClick={()=>setIsLiked(true)} />
+                    }
                     <div>
                         <p>Date published:</p>
                         <p>{recipe?.createdAt?.toDate().toDateString()}</p>
@@ -43,6 +53,7 @@ function RecipeDetails() {
                         <p>{recipe?.createdBy && 'Submitted by:'}</p>
                         <p>{recipe?.createdBy && recipe?.createdBy?.toUpperCase()}</p>
                     </div>
+                    
                 </div>
             </div>
             <img src={recipe?.imageURL} className='details-img' />
@@ -54,6 +65,10 @@ function RecipeDetails() {
         <div className='instructions-container'>
             <h2>Instructions</h2>
             <Instructions instructions={recipe?.instructions} />
+        </div>
+        <div className='comments-container'>
+            <h2>Comments</h2>
+            <Comments />
         </div>
     </>
   )
