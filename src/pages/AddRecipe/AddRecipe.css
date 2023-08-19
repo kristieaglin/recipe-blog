@@ -41,14 +41,15 @@
     color: sienna;
 }
 
-.input-group input{
+.input-group input, .input-group textarea{
     padding: 10px 20px;
     font-size: 19px;
     border: none;
     border-bottom: 1px solid black;
+    resize: vertical;
 }
 
-.input-group input::placeholder{
+.input-group input::placeholder, .input-group textarea::placeholder{
     color: rgba(160, 81, 45, 0.443);
 }
 

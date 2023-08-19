@@ -60,6 +60,8 @@ function Banner() {
                     <div className='other-recipe-info'>
                         <h2>{item?.title}</h2>
                         <p>{item?.createdAt?.toDate().toDateString()}</p>
+                        <BsFillSuitHeartFill className='main-icon' />
+                        <FaRegComment className='main-icon' />
                     </div>
                 </div>)
             }

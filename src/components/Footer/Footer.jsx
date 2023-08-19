@@ -2,13 +2,16 @@ import React from 'react'
 import './Footer.css'
 import { BsFillSuitHeartFill } from "react-icons/bs"
 import { TiSocialFacebook, TiSocialInstagram, TiSocialPinterest } from "react-icons/ti"
-
+import { useNavigate } from 'react-router-dom'
 
 
 function Footer() {
+
+  const navigate = useNavigate()
+
   return (
     <div className='footer-container'>
-      <div className='contact-us'>
+      <div className='contact-us' onClick={()=>navigate('/contact')}>
         <p>Contact us</p>
         <BsFillSuitHeartFill className='footer-heart' />
       </div>

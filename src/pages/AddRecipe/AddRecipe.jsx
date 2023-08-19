@@ -89,8 +89,7 @@ function AddRecipe() {
                 </div> 
                 <div className='input-group'>
                     <label htmlFor='summary'>Summary</label>
-                    <input
-                        type='text'
+                    <textarea
                         id='summary'
                         placeholder='Required'
                         required
@@ -109,8 +108,7 @@ function AddRecipe() {
                             </div>
                         </div>
                     }
-                    <input
-                        type='text'
+                    <textarea
                         id='ingredients'
                         placeholder='Required'
                         required
@@ -129,8 +127,7 @@ function AddRecipe() {
                             </div>
                         </div>
                     }
-                    <input
-                        type='text'
+                    <textarea
                         id='instructions'
                         placeholder='Required'
                         required

@@ -7,6 +7,7 @@ import RecipeCategories from './pages/RecipeCategories/RecipeCategories';
 import Auth from './pages/Auth/Auth'
 import AddRecipe from './pages/AddRecipe/AddRecipe';
 import RecipeDetails from './pages/RecipeDetails/RecipeDetails';
+import ContactUs from './pages/ContactUs/ContactUs';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route path='/' element={<Homepage />} />
         <Route path='/auth' element={<Auth />} />
         <Route path='/add' element={<AddRecipe />} />
+        <Route path='/contact' element={<ContactUs />} />
         <Route path='/recipes/:recipeCategory' element={<RecipeCategories />} />
         <Route path='/details/:recipeId' element={<RecipeDetails />} />
       </Routes>
