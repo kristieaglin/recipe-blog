@@ -32,7 +32,7 @@ function Header() {
                     {
                         user ?
                         <div className='logged-in-menu-closed'>
-                            <p>Hello, {user.displayName ? user.displayName : user.email}!</p>
+                            <p>Hello, {user.displayName.charAt(0).toUpperCase()}!</p>
                             <button className='signup-btn' onClick={()=>signOut(auth)}>Log out</button>
                         </div>
                         :
@@ -46,7 +46,7 @@ function Header() {
                         user ?
                         <div>
                             <div className='menu-options'>
-                            <p className='recipe-category-p'>Hello, {user?.displayName ? user?.displayName : user?.email}!</p>
+                            <p className='recipe-category-p'>Hello, {user?.displayName.charAt(0).toUpperCase()}!</p>
                             <Link to={'/'} className='recipe-category'>Home</Link>
                             <Link to={'/add'} className='recipe-category'>Add a new Entry</Link>
                             <Link to={'/favorites'} className='recipe-category'>Favorites</Link>

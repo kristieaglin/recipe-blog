@@ -43,18 +43,6 @@
     font-size: 20px;
 }
 
-.main-icon-container{
-    position: absolute;
-    right: 50px;
-    top: 140px;  
-    z-index: 1;
-}
-
-.main-icon{
-    font-size: 2em;
-    padding-top: 5px;
-}
-
 .other-recipes-container{
     display: flex;
     flex-wrap: wrap;

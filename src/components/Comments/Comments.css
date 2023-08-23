@@ -24,3 +24,27 @@
     cursor: pointer;
     margin: 50px 0 30px;
 }
+
+.comment-p{
+    color: sienna;
+    font-size: 22px;
+    padding-top: 30px;
+}
+
+.comment-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px black solid;
+    padding: 30px 30px 30px;
+    width: 85%;
+}
+
+.comment-container:last-child{
+    border: none;
+}
+
+.trash-icon{
+    font-size: 2em;
+    cursor: pointer;
+}

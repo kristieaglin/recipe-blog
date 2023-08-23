@@ -1,0 +1,28 @@
+.comment-card-container{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.user-icon{
+    background-color: rgb(160, 81, 45);
+    color: white;
+    padding: 12px 17px;
+    border-radius: 30px;
+    font-size: 25px;
+}
+
+.comment{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.comment h3{
+    font-size: 22px;
+}
+
+.comment p{
+    font-size: 17px;
+    width: 85%;
+}

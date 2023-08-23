@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import './Banner.css'
 import { collection, getDocs, query, orderBy, limit } from 'firebase/firestore'
 import { db } from '../../config/firebaseConfig'
-import { BsSuitHeartFill, BsSuitHeart } from "react-icons/bs"
 import { useNavigate } from 'react-router-dom'
 
 function Banner() {
@@ -11,8 +10,6 @@ function Banner() {
 
     const [mainRecipe, setMainRecipe] = useState({})
     const [otherRecipes, setOtherRecipes] = useState([])
-
-    const [isLiked, setIsLiked] = useState(true)
 
     useEffect(()=>{
         //reference to recipes collection
@@ -49,14 +46,6 @@ function Banner() {
                 <p className='main-date'>{mainRecipe?.createdAt?.toDate().toDateString()}</p>
                 <p>{mainRecipe?.summary}</p>
             </div>
-            <div className='main-icon-container'>
-                {
-                    isLiked ?
-                    <BsSuitHeartFill className='main-icon' onClick={()=>setIsLiked(false)} />
-                    :
-                    <BsSuitHeart className='main-icon' onClick={()=>setIsLiked(true)} />
-                }
-            </div>
         </div>
         <div className='other-recipes-container'>
             {
@@ -65,12 +54,6 @@ function Banner() {
                     <div className='other-recipe-info'>
                         <h2 onClick={()=>navigate(`details/${item?.id}`)}>{item?.title}</h2>
                         <p onClick={()=>navigate(`details/${item?.id}`)}>{item?.createdAt?.toDate().toDateString()}</p>
-                        {
-                            isLiked ?
-                            <BsSuitHeartFill className='main-icon' onClick={()=>setIsLiked(false)} />
-                            :
-                            <BsSuitHeart className='main-icon' onClick={()=>setIsLiked(true)} />
-                        }
                     </div>
                 </div>)
             }

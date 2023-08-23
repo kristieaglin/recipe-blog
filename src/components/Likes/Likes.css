@@ -1,0 +1,9 @@
+.like-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.like-icon{
+    font-size: 1.5em;
+}

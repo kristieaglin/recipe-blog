@@ -1,21 +1,20 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './RecipeCard.css'
 import { useNavigate } from 'react-router-dom'
-import { BsFillSuitHeartFill } from "react-icons/bs"
-import { FaRegComment } from "react-icons/fa"
 
 function RecipeCard({recipe}) {
 
   const navigate = useNavigate()
 
+  
+
+
   return (
-    <div key={recipe.id} className='recipe-card' onClick={()=>navigate(`/details/${recipe?.id}`)}>
-        <img src={recipe?.imageURL} className='other-recipes-img' />
+    <div key={recipe.id} className='recipe-card'>
+        <img src={recipe?.imageURL} className='other-recipes-img' onClick={()=>navigate(`/details/${recipe?.id}`)} />
         <div className='other-recipe-info'>
-            <h2>{recipe?.title}</h2>
-            <p>{recipe?.createdAt?.toDate().toDateString()}</p>
-            <BsFillSuitHeartFill className='main-icon' />
-            <FaRegComment className='main-icon' />
+            <h2 onClick={()=>navigate(`/details/${recipe?.id}`)}>{recipe?.title}</h2>
+            <p onClick={()=>navigate(`/details/${recipe?.id}`)}>{recipe?.createdAt?.toDate().toDateString()}</p>
         </div>
     </div>
   )
