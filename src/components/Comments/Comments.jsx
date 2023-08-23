@@ -3,7 +3,7 @@ import CommentCard from '../CommentCard/CommentCard'
 import './Comments.css'
 import { auth } from '../../config/firebaseConfig'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { collection, addDoc, query, where, onSnapshot, deleteDoc, doc, Timestamp } from 'firebase/firestore'
+import { collection, addDoc, query, where, onSnapshot, deleteDoc, doc, Timestamp, orderBy } from 'firebase/firestore'
 import { db } from '../../config/firebaseConfig'
 import Swal from 'sweetalert2'
 import { IoTrashOutline } from "react-icons/io5";
@@ -121,7 +121,6 @@ function Comments({recipeId}) {
         }
         {
           comments.map(item=>
-            user?.uid === item?.userId &&
             <div key={item.id} className='comment-container'>
               <CommentCard comments={item} />
               {

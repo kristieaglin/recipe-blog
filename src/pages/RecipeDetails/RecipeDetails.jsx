@@ -43,7 +43,7 @@ function RecipeDetails() {
                     </div>
                     <div>
                         <p>{recipe?.createdBy && 'Submitted by:'}</p>
-                        <p>{recipe?.createdBy && recipe?.createdBy?.toUpperCase()}</p>
+                        <p>{recipe?.createdBy && recipe?.createdBy?.charAt(0).toUpperCase()  + recipe?.createdBy.slice(1)}</p>
                     </div>
                 </div>
                 <Likes recipeId={recipeId}/>
