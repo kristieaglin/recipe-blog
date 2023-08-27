@@ -11,7 +11,7 @@ function CommentCard({comments}) {
     <div className='comment-card-container'>
         <Avatar
             name={comments?.username?.charAt(0)}
-            size='70'
+            size='50'
             round={true}
             color='sienna'
         />

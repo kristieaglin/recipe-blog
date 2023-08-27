@@ -1,4 +1,6 @@
 .recipe-categories-container{
     display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
     min-height: 100vh;
 }

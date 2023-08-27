@@ -49,7 +49,6 @@ function Header() {
                             <p className='recipe-category-p'>Hello, {user.displayName.charAt(0).toUpperCase() + user.displayName.slice(1)}!</p>
                             <Link to={'/'} className='recipe-category'>Home</Link>
                             <Link to={'/add'} className='recipe-category'>Add a new Entry</Link>
-                            <Link to={'/favorites'} className='recipe-category'>Favorites</Link>
                             <h3 className='category-title'>Recipes by category</h3>
                             {
                                 recipeCategoies.map((item,index)=><Link key={index} className='recipe-category' to={`/recipes/${item}`}>{item}</Link>)

@@ -14,3 +14,42 @@
     font-weight: 300;
     width: 50%;
 }
+
+@media screen and (max-width: 1130px){
+
+    .ingredients p{
+        font-size: 17px;
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 670px){
+
+    .ingredients{
+        gap: 10px;
+        margin: 15px 20px;
+    }
+    
+    .ingredient-icon{
+        font-size: 1.75em;
+    }
+    
+    .ingredients p{
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 380px){
+    
+    .ingredients{
+        margin: 15px 10px;
+    }
+    
+    .ingredient-icon{
+        font-size: 1.5em;
+    }
+    
+    .ingredients p{
+        width: 80%;
+    }
+}

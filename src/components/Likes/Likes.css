@@ -7,3 +7,17 @@
 .like-icon{
     font-size: 1.5em;
 }
+
+@media screen and (max-width: 1130px){
+
+    .like-icon{
+        font-size: 1.25em;
+    }
+}
+
+@media screen and (max-width: 380px){
+    
+    .like-icon{
+        font-size: 1em;
+    }
+}

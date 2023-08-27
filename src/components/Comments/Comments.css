@@ -36,7 +36,7 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px black solid;
-    padding: 30px 30px 30px;
+    padding: 30px;
     width: 85%;
 }
 
@@ -45,6 +45,65 @@
 }
 
 .trash-icon{
-    font-size: 2em;
+    font-size: 1.5em;
     cursor: pointer;
+}
+
+@media screen and (max-width: 1130px){
+
+    .comments-form textarea{
+        width: 55%;
+    }
+
+    .comment-p{
+        font-size: 19px;
+    }
+
+    .comment-container{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 670px){
+
+    .comments-form textarea{
+        width: 50%;
+        font-size: 17px;
+        padding: 10px;
+        margin: 20px 30px;
+    }
+
+    .comment-p{
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 380px){
+
+    .comments-form{
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    
+    .comments-form textarea{
+        width: 80%;
+        font-size: 15px;
+        padding: 10px;
+        margin: 10px 30px;
+    }
+
+    .comments-form button{
+        padding: 10px 25px;
+        font-size: 15px;
+        margin: 10px 30px;
+    }
+
+    .comment-p{
+        font-size: 15px;
+    }
+
+    .comment-container{
+        padding: 20px 15px;
+        width: 100%;
+    }
 }

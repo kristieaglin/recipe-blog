@@ -50,7 +50,9 @@ function Banner() {
         <div className='other-recipes-container'>
             {
                 otherRecipes.map(item=><div key={item.id} className='other-recipe'>
+                    <div>
                     <img src={item?.imageURL} className='other-recipes-img' onClick={()=>navigate(`details/${item?.id}`)} />
+                    </div>
                     <div className='other-recipe-info'>
                         <h2 onClick={()=>navigate(`details/${item?.id}`)}>{item?.title}</h2>
                         <p onClick={()=>navigate(`details/${item?.id}`)}>{item?.createdAt?.toDate().toDateString()}</p>

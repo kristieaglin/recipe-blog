@@ -25,3 +25,51 @@
 .footer-icon{
     font-size: 2.5em;
 }
+
+@media screen and (max-width: 1200px){
+
+    .footer-container{
+        padding: 20px 30px;
+    }
+}
+
+
+@media screen and (max-width: 1130px){
+    .footer-container{
+        padding: 10px 30px;
+    }
+}
+
+@media screen and (max-width: 670px){
+
+    .footer-container{
+        padding: 10px 20px;
+    }
+
+    .footer-icon{
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 380px){
+
+    .footer-container{
+        padding: 10px 15px;
+    }
+
+    .contact-us{
+        gap: 5px;
+    }
+
+    .contact-us p{
+        font-size: 15px;
+    }
+
+    .footer-heart{
+        font-size: .75em;
+    }
+
+    .footer-icon{
+        font-size: 1.25em;
+    }
+}

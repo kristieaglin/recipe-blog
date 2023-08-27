@@ -57,8 +57,83 @@
 }
 
 .auth-img{
-    height: 80vh;
+    height: 90vh;
     width: 40%;
     object-fit: cover;
     padding-right: 50px;
+}
+
+@media screen and (max-width: 1130px){
+
+    .auth-form{
+        width: 50%;
+        padding: 50px;
+    }
+
+    .auth-form h2{
+        font-size: 35px;
+    }
+
+    .auth-form p{
+        font-size: 17px;
+    }
+
+    .auth-input-container{
+        width: 250px;
+    }
+
+    .auth-img{
+        width: 50%;
+        padding-right: 30px;
+    }
+}
+
+@media screen and (max-width: 670px){
+
+    .form-container{
+        flex-direction: column-reverse;
+    }
+
+    .auth-form{
+        width: 100%;
+        padding: 150px 50px;
+    }
+
+    .auth-img{
+        width: 100%;
+        padding-right: 0;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 380px){
+    
+    .auth-form{
+        width: 100%;
+        padding: 100px 20px 150px;
+    }
+
+    .auth-form h2{
+        font-size: 32px;
+    }
+
+    .auth-form p{
+        font-size: 15px;
+    }
+
+    .auth-input-container{
+        width: 230px;
+    }
+
+    .auth-input{
+        font-size: 15px;
+    }
+
+    .auth-button{
+        padding: 7px 25px;
+    }
+
+    .auth-img{
+        height: 250px;
+    }
 }

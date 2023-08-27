@@ -92,3 +92,101 @@
     color: white;
     text-decoration: none;
 }
+
+@media screen and (max-width: 1200px){
+
+    .header-container{
+        padding: 20px 30px;
+    }
+}
+
+@media screen and (max-width: 1130px){
+
+    .header-container{
+        padding: 10px 30px;
+    }
+
+    .header-container h1{
+        font-size: 30px;
+    }
+
+    .header-container p{
+        font-size: 15px;
+    }
+
+    .menu-closed{
+        gap: 10px;
+    }
+
+    .logged-in-menu-closed{
+        gap: 10px;
+    }
+
+    .menu-open{
+        gap: 50px;
+        padding: 30px;
+    }
+
+    .signup-btn{
+        padding: 7px 25px;
+    }
+
+}
+
+@media screen and (max-width: 670px){
+
+    .header-container{
+        padding: 7px 20px;
+    }
+
+    .header-container h1{
+        font-size: 25px;
+    }
+
+    .header-container p{
+        font-size: 12px;
+    }
+
+    .logged-in-menu-closed{
+        display: none;
+    }
+
+    .menu-open{
+        gap: 30px;
+        padding: 25px;
+    }
+
+    .category-title{
+        font-size: 17px;
+    }
+
+    .recipe-category{
+        font-size: 12px;
+    }
+
+}
+
+@media screen and (max-width: 380px){
+
+    .header-container{
+        padding: 7px 15px;
+    }
+
+    .header-container p:nth-child(2){
+        display: none;
+    }
+
+    .menu-open{
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .category-title{
+        font-size: 15px;
+    }
+
+    .signup-btn{
+        padding: 7px 20px;
+        font-size: 12px;
+    }
+}

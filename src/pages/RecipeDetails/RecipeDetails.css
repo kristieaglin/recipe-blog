@@ -70,3 +70,146 @@
 .comments-container{
     padding: 50px 50px 30px;
 }
+
+@media screen and (max-width: 1200px){
+
+    .details-info{
+        padding: 50px 75px;
+        gap: 15px;
+    }
+
+    .details-img{
+        height: 35vh;
+        padding-right: 30px;
+    }
+}
+
+@media screen and (max-width: 1130px){
+
+    .details-info{
+        width: 60%;
+        padding: 50px 50px;
+    }
+
+    .details-info h1{
+        font-size: 32px;
+    }
+
+    .details-info h2{
+        font-size: 18px;
+    }
+
+    .details-info p{
+        font-size: 15px;
+    }
+
+    .details-info div p{
+        font-size: 14px;
+    }
+
+    .details-img{
+        height: 30vh;
+        width: 40%;
+    }
+
+    .ingredients-container, .instructions-container{
+        padding: 40px 30px 20px;
+    }
+
+    .ingredients-container h2, .instructions-container h2, .comments-container h2{
+        font-size: 28px;
+    }
+
+    .comments-container{
+        padding: 40px 30px 20px;
+    }
+    
+}
+
+@media screen and (max-width: 670px){
+
+    .details-container{
+        flex-direction: column-reverse;
+    }
+
+    .details-info{
+        width: 100%;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .details-info h1{
+        font-size: 28px;
+    }
+
+    .details-info h2{
+        font-size: 17px;
+    }
+
+    .details-info p{
+        font-size: 15px;
+    }
+
+    .details-info div p{
+        font-size: 14px;
+    }
+
+    .details-img{
+        height: 215px;
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .ingredients-container, .instructions-container{
+        padding: 30px 20px 10px;
+    }
+
+    .ingredients-container h2, .instructions-container h2, .comments-container h2{
+        font-size: 25px;
+    }
+
+    .comments-container{
+        padding: 30px 20px 10px;
+    }
+    
+}
+
+@media screen and (max-width: 380px){
+
+    .details-info{
+        padding: 15px;
+    }
+
+    .details-info h1{
+        font-size: 25px;
+    }
+
+    .details-info h2{
+        font-size: 15px;
+    }
+
+    .details-info p{
+        font-size: 12px;
+    }
+
+    .details-info div p{
+        font-size: 11px;
+    }
+
+    .details-img{
+        height: 175px;
+    }
+
+    .ingredients-container, .instructions-container{
+        padding: 20px 15px 5px;
+    }
+
+    .ingredients-container h2, .instructions-container h2, .comments-container h2{
+        font-size: 23px;
+    }
+
+    .comments-container{
+        padding: 20px 15px 5px;
+    }
+
+}
